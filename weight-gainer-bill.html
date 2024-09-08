@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Page - Weight Gainer</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+        /* Bill Page Styles */
+        body{
+            background-color: #181818;
+        }
+        .bill-section {
+            padding: 60px 20px;
+            background-color: #181818;
+            color: #fff;
+            text-align: center;
+        }
+
+        .bill-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .bill-container h1 {
+            font-size: 2.5rem;
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
+
+        .bill-details {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        .bill-details td {
+            padding: 10px 0;
+        }
+
+        .bill-details .total-row td {
+            padding-top: 20px;
+            font-size: 1.5rem;
+            color: #ff5722;
+        }
+
+        .pay-now {
+            margin-top: 30px;
+        }
+
+        .pay-now-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .pay-now-button:hover {
+            background-color: #e64a19;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="bill-section">
+        <div class="bill-container">
+            <h1>Order Summary</h1>
+            <table class="bill-details">
+                <tr>
+                    <td>Product</td>
+                    <td>Weight Gainer</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>$34.99</td>
+                </tr>
+                <tr>
+                    <td>GST (10%)</td>
+                    <td>$3.50</td>
+                </tr>
+                <tr>
+                    <td>Shipping Cost</td>
+                    <td>Free</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total</strong></td>
+                    <td><strong>$38.49</strong></td>
+                </tr>
+            </table>
+            <div class="pay-now">
+                <a href="./final-page.html" class="pay-now-button">Pay Now</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

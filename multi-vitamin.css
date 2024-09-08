@@ -1,0 +1,126 @@
+/* Product Detail Page Styles */
+body{
+    background-color: #181818;
+}
+
+.product-detail-section {
+    padding: 60px 20px;
+    background-color: #181818;
+    color: #fff;
+    text-align: center;
+}
+
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-info {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.product-info h1 {
+    font-size: 2.5rem;
+    color: #ff5722;
+    margin-bottom: 15px;
+}
+
+.product-info p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff5722;
+    margin: 10px 0;
+    display: block;
+}
+
+.star-rating {
+    font-size: 1.2rem;
+    color: #ff5722;
+    margin: 10px 0;
+}
+
+.product-details {
+    margin-bottom: 20px;
+}
+
+.product-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.buttons a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.buttons a:hover {
+    background-color: #e64a19;
+}
+
+.customer-reviews {
+    margin-top: 40px;
+}
+
+.customer-reviews h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.review-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ddd;
+}
+
+.review-card p {
+    margin: 0;
+}
+
+.review-card p strong {
+    display: block;
+    color: #ff5722;
+}

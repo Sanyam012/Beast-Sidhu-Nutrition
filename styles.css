@@ -1,0 +1,664 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #121212;
+    overflow-x: hidden;
+}
+
+header.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 1000;
+}
+
+.nav-logo img {
+    height: 50px; /* Adjust the height according to your logo size */
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff5722;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.cta-button {
+    background-color: #ff5722; /* Accent color */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e64a19; /* Darker shade for hover effect */
+    cursor: pointer;
+}
+
+.secondary-cta {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ff5722;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.secondary-cta:hover {
+    color: #e64a19; /* Darker shade for hover effect */
+    cursor: pointer;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button, .secondary-cta {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links li a {
+        font-size: 0.9rem;
+    }
+}
+.product-categories-section {
+    padding: 60px 20px;
+    background-color: #181818;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff5722;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 30s linear infinite;
+}
+
+.category-card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 auto;
+}
+
+.category-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #ff5722;
+}
+
+.category-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.category-link:hover {
+    background-color: #e64a19;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-270px * 6)); /* Width of one item plus gap */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .category-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .category-card p {
+        font-size: 0.9rem;
+    }
+
+    .category-link {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+.why-choose-us-section {
+    padding: 60px 20px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff5722;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #ff5722;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+.featured-products-section {
+    padding: 60px 20px;
+    background-color: #181818;
+    color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff5722;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #ff5722;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #ff5722;
+    margin: 10px 0;
+    display: block;
+}
+
+.product-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.product-link:hover {
+    background-color: #e64a19;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* 1 item per row on extra small screens */
+    }
+}
+
+
+/* Customer Stories Section */
+.customer-stories {
+    padding: 60px 0;
+    background-color: #1c1c1c; /* Dark background for the section */
+}
+
+.customer-stories .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.customer-stories h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #FF5722; /* Main color used in your index file */
+    margin-bottom: 40px;
+}
+
+.stories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.story-card {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.story-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.story-content {
+    text-align: center;
+}
+
+.story-content p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.story-content h3 {
+    font-size: 1.25rem;
+    color: #FF5722; /* Main color used in your index file */
+    margin-bottom: 5px;
+}
+
+.story-content span {
+    font-size: 0.875rem;
+    color: #aaa;
+}
+/* Newsletter Signup Section */
+.newsletter-signup {
+    padding: 80px 20px;
+    background-color: #121212; /* Dark background for the section */
+    color: #e0e0e0; /* Light text color */
+}
+
+.signup-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.signup-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.signup-info h2 {
+    font-size: 2.5rem;
+    color: #FF5722; /* Main color used in your index file */
+    margin-bottom: 10px;
+}
+
+.signup-info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 15px;
+    color: #ddd;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+.newsletter-form input::placeholder {
+    color: #aaa;
+}
+
+.newsletter-form input:focus {
+    border-color: #FF5722; /* Main color used in your index file */
+    outline: none;
+}
+
+.newsletter-form button {
+    background-color: #FF5722; /* Main color used in your index file */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #e64a19; /* Slightly darker shade of the main color */
+    transform: translateY(-2px);
+}
+
+.signup-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.signup-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Footer Section */
+.footer {
+    background-color: #222; /* Dark background color */
+    color: #ddd; /* Light text color */
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.footer-top {
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo-img {
+    max-width: 180px; /* Adjust as needed */
+    height: auto;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px; /* Space between columns */
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    max-width: 300px; /* Adjust as needed */
+    text-align: left;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #FF5722; /* Main color used in your index file */
+}
+
+.footer-column p {
+    margin: 5px 0;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #FF5722; /* Main color used in your index file */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px; /* Space between social icons */
+}
+
+.footer-social a {
+    color: #ddd;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #FF5722; /* Main color used in your index file */
+}
+
+.footer-bottom {
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+

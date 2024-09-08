@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+            background-color: #212121;
+            /* Simple contrasting dark background color */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .confirmation-container {
+            text-align: center;
+            padding: 40px;
+            background-color: #1c1c1c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .confirmation-container h1 {
+            font-size: 2.5rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .confirmation-container .checkmark {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background: #4caf50;
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .checkmark:before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            border: 8px solid #fff;
+            border-top: none;
+            border-right: none;
+            transform: rotate(45deg);
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -25px;
+            opacity: 0;
+            animation: drawCheckmark 1s 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes drawCheckmark {
+            from {
+                transform: rotate(180deg) scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: rotate(320deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .gradient-effect {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            background: rgba(0, 128, 0, 0.3);
+            mix-blend-mode: multiply;
+            transition: width 0.3s, height 0.3s, background 0.3s;
+            z-index: 1;
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .confetti div {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: fall 2s infinite;
+        }
+
+        .confetti div:nth-child(1) {
+            background: #ff5722;
+            /* Orange */
+            animation-delay: 0s;
+        }
+
+        .confetti div:nth-child(2) {
+            background: #f44336;
+            /* Red */
+            animation-delay: 0.2s;
+        }
+
+        .confetti div:nth-child(3) {
+            background: #9c27b0;
+            /* Purple */
+            animation-delay: 0.4s;
+        }
+
+        .confetti div:nth-child(4) {
+            background: #3f51b5;
+            /* Blue */
+            animation-delay: 0.6s;
+        }
+
+        .confetti div:nth-child(5) {
+            background: #4caf50;
+            /* Green */
+            animation-delay: 0.8s;
+        }
+
+        .confetti div:nth-child(6) {
+            background: #ffc107;
+            /* Yellow */
+            animation-delay: 1s;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(calc(100vh + 100px));
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="confirmation-container">
+        <h1>Thanks for placing your order!</h1>
+        <div class="checkmark"></div>
+    </div>
+    <div class="gradient-effect" id="gradientEffect"></div>
+    <div class="confetti">
+        <!-- Dynamically generated confetti elements -->
+    </div>
+    <script>
+        const gradientEffect = document.getElementById('gradientEffect');
+
+        document.addEventListener('mousemove', (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+            gradientEffect.style.left = `${x - 150}px`;
+            gradientEffect.style.top = `${y - 150}px`;
+            gradientEffect.style.width = `300px`;
+            gradientEffect.style.height = `300px`;
+            gradientEffect.style.background = `radial-gradient(circle, rgba(0, 128, 0, 0.5) 0%, rgba(0, 128, 0, 0) 80%)`;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            gradientEffect.style.width = `0px`;
+            gradientEffect.style.height = `0px`;
+        });
+
+        // Confetti effect
+        function generateConfetti() {
+            const confettiContainer = document.querySelector('.confetti');
+            for (let i = 0; i < 200; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.style.left = `${Math.random() * 100}vw`;
+                confettiPiece.style.top = `${Math.random() * -100}vh`;
+                confettiPiece.style.width = `${Math.random() * 15 + 5}px`;
+                confettiPiece.style.height = `${Math.random() * 15 + 5}px`;
+                confettiPiece.style.background = ['#ff5722', '#f44336', '#9c27b0', '#3f51b5', '#4caf50', '#ffc107'][Math.floor(Math.random() * 6)];
+                confettiContainer.appendChild(confettiPiece);
+            }
+        }
+
+        generateConfetti();
+    </script>
+</body>
+
+</html>
